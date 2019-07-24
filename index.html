@@ -54,6 +54,9 @@
             <a class="nav-link js-scroll-trigger" href="#about">Methodology</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#results">Results</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#team">Team</a>
           </li>
           <li class="nav-item">
@@ -68,9 +71,9 @@
   <header class="masthead">
     <div class="container">
       <div class="intro-text">
-        <div class="intro-heading text-uppercase">The Impact of Manhattan Congestion Surcharge on For-Hire-Vehicle</div>
-        <div class="intro-lead-in">Quantifiable | Significant | Predictive</div>
-        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Explore Map !</a>
+        <div class="intro-heading text-uppercase">Impact of Manhattan Congestion Surcharge on Transportation Choices in New York City</div>
+        <div class="intro-lead-in">Predictive | Relevant | Equity-focused</div>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Explore Our Map !</a>
       </div>
     </div>
   </header>
@@ -79,77 +82,137 @@
   <section id="services">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">The Map of Transportation Choice </h2>
-          <h3 class="section-subheading text-muted">This map reflects the transportation choices of commuters in New York City and has been aggregated on the taxi zone level. <br> The transportation choices of people in that taxi zone and the information about that taxi zone can be seen by hovering over it. Also, the red points on the map indicate the locations of subway stations.</h3>
-        </div>
+        <!-- <div class="col-lg-12 text-center"> -->
+          <h2 class="section-heading text-uppercase col-lg-12 text-center">Transportation Choice  Map (Nest Based)</h2>
+          <h3 class="section-subheading text-muted col-lg-12 text-center">An interactive map which can be explored by moving mouse around.</h3>
+            <h3 class="section-subheading text-muted">
+              This map reflects the transportation choices amoung all modes of commuters in New York City,
+              aggregated on the taxi zone level.
+              Specifically, the shade of map indicates the median household income in each taxi zone,
+              classified into 5 levels.
+              The pie charts reflects commuters' transportation choices among 4 nests (nest1: taxi/for-hire-vehicles/shared for-hire-vehicles;
+              nest2: public transportation; nest3: walking; nest4: private vehicles) in that taxi zone.
+              Three charts represent three scenarios: one baseline scenario (no congestion surcharge)
+              and two surcharge scenarios (add around $2.75/ add around $10). All proportions are get from
+              the results of our multinomial nested logit model. The red points on the map indicate the locations of
+              subway stations.</h3>
+        <!-- </div> -->
       </div>
 
       <div id='mapContainer'>
         <div class="sidebar">
           <div class="info-box">
             <div class="legend">
-              <strong>—LEGEND OF TAXI ZONE COLORS—</strong>
+              <strong>—— LEGEND OF TAXI ZONE COLORS ——</strong>
             </div>
           </div>
           <div class="info-box">
-            <strong>—INFORMATION OF THE TAXI ZONE—</strong>
+            <strong>—— INFORMATION OF THIS TAXI ZONE —— </strong>
             <br>
             <span id='zonename'></span>
             <br>
             <span id='brough'>Please move the mouse around</span>
             <div class='with-3d-shadow with-transitions'>
             <br>
-              <span id='distribution'></span>
+              <strong id='distribution'></strong>
               <svg id="piechart" class="mypiechart"></svg>
+              <strong id='distribution2'></strong>
+              <svg id="piechart2" class="mypiechart"></svg>
+              <strong id='distribution3'></strong>
+              <svg id="piechart3" class="mypiechart"></svg>
             </div>
           </div>
           <div class="info-box">
-            <strong>—EXPLORE AIRPORT LOCATION—</strong>
+            <strong>—— EXPLORE CONGESTION ZONE AREA ——</strong>
             <br>
-            <button class="flyto" data-airport="JFK_airport">JFK</button>
-            <button class="flyto" data-airport="EWR_airport">EWR</button>
-            <button class="flyto" data-airport="LGA_airport">LGA</button>
-            <button class="flyto" data-airport="Back">Back</button>
+            <br>
+            <button class="flyto" data-congestionzone="CongestionArea">Congestion Zone</button>
+            <!-- <button class="flyto" data-airport="EWR_airport">EWR</button>
+            <button class="flyto" data-airport="LGA_airport">LGA</button> -->
+            <button class="flyto1" data-back="Back">Back</button>
+            <br>
+            <br>
           </div>
         </div>
       </div>
-      <!-- <div class="row text-center">
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">E-Commerce</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-        </div>
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">Responsive Design</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-        </div>
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">Web Security</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-        </div>
-      </div> -->
     </div>
+
+    <div>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <!-- <div class="col-lg-12 text-center"> -->
+          <h2 class="section-heading text-uppercase col-lg-12 text-center">Transportation Choice  Map (Mode Based)</h2>
+          <h3 class="section-subheading text-muted col-lg-12 text-center">An interactive map which can be explored by moving mouse around.</h3>
+        <!-- </div> -->
+          <h3 class="section-subheading text-muted">
+            This map reflects the transportation choices amoung surcharge-impacted modes of commuters in New York City,
+            aggregated on the taxi zone level.
+            Specifically, the shade of map indicates the proportion of people living in that zone
+            who work in the congestion zone area, classified into 4 levels.
+            The pie charts reflects commuters' transportation choices among 4 modes which will be influence
+            (taxi; for-hire-vehicles; shared for-hire-vehicles; private vehicles) in that taxi zone.
+            Three charts represent three scenarios: one baseline scenario (no congestion surcharge)
+            and two surcharge scenarios (add around $2.75/ add around $10). All proportions are get from
+            the results of our multinomial nested logit model. The red points on the map indicate the locations of
+            subway stations.
+            <br>
+            <br>
+            * Note: Only modes which pay the surcharge are plotted on the pie chart.
+          </h3>
+      </div>
+      <div id='mapContainer2'>
+        <div class="sidebar">
+          <div class="info-box">
+            <div class="legend2">
+              <strong>—LEGEND OF TAXI ZONE COLORS—</strong>
+            </div>
+          </div>
+          <div class="info-box">
+            <strong>—INFORMATION OF THE TAXI ZONE—</strong>
+            <br>
+            <span id='zonename2'></span>
+            <br>
+            <span id='brough2'>Please move the mouse around</span>
+            <div class='with-3d-shadow with-transitions'>
+            <br>
+              <strong id='distribution4'></strong>
+              <svg id="piechart4" class="mypiechart"></svg>
+              <strong id='distribution5'></strong>
+              <svg id="piechart5" class="mypiechart"></svg>
+              <strong id='distribution6'></strong>
+              <svg id="piechart6" class="mypiechart"></svg>
+            </div>
+          </div>
+          <div class="info-box">
+            <strong>—— EXPLORE CONGESTION ZONE AREA —— </strong>
+            <br>
+            <br>
+            <button class="flyto" data-congestionzone="CongestionArea">Congestion Zone</button>
+            <!-- <button class="flyto" data-airport="EWR_airport">EWR</button>
+            <button class="flyto" data-airport="LGA_airport">LGA</button> -->
+            <button class="flyto1" data-back="Back">Back</button>
+            <br>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section>
 
-  <!-- About Section: intoduce some background -->
+  <!-- About Section: introduce some background -->
   <section class="bg-light" id="portfolio">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">About</h2>
-          <h3 class="section-subheading text-muted">Know our study</h3>
+          <h3 class="section-subheading text-muted">Why is this study valuable now?</h3>
         </div>
       </div>
       <div class="row">
@@ -164,7 +227,7 @@
           </a>
           <div class="portfolio-caption">
             <h4>Background</h4>
-            <p class="text-muted">What is Congestion Surcharge</p>
+            <p class="text-muted">Congestion Surcharge</p>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
@@ -177,8 +240,12 @@
             <img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
           </a>
           <div class="portfolio-caption">
+<<<<<<< HEAD
             <h4>Motivation</h4>
-            <p class="text-muted">Why we need to study</p>
+=======
+            <h4> Motivation</h4>
+>>>>>>> bbf30c1426e734650ffe2143b5f65c5c59951f47
+            <p class="text-muted">Why it matters?</p>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
@@ -192,7 +259,7 @@
           </a>
           <div class="portfolio-caption">
             <h4>Objective</h4>
-            <p class="text-muted">How to study</p>
+            <p class="text-muted">Our approach</p>
           </div>
         </div>
         <!-- <div class="col-md-4 col-sm-6 portfolio-item">
@@ -238,6 +305,7 @@
           </div>
         </div> -->
       </div>
+
     </div>
   </section>
 
@@ -247,7 +315,7 @@
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">Data and Methodology</h2>
-          <h3 class="section-subheading text-muted">Mathematics | Coding</h3>
+          <h3 class="section-subheading text-muted">Open Data | Modeling</h3>
         </div>
       </div>
       <div class="row">
@@ -255,22 +323,27 @@
           <ul class="timeline">
             <li>
               <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="img/about/1.jpg" alt="">
+                <img class="rounded-circle img-fluid" src="img/data/1.jpg" alt="">
               </div>
               <div class="timeline-panel">
                 <div class="timeline-heading">
                   <h4>Data</h4>
                   <div class="timeline-body">
-                    <p class="text-muted">Census Static Data</p>
+                    <strong>————Aggregated Dataset————</strong>
+                    <img class="img-fluid d-block mx-auto" src="img/agg_data.jpg" alt="">
+                    <strong>——————Data Source——————</strong>
+                    <br>
+                    <stong class="text-muted">Census Static Data</stong>
                     <ul class="list-inline">
-                      <li>● Longitudinal Employer-Household Dynamics (LEHD)/ Origin-Destination Employment Statistics(LODES) data</li>
-                      <li>● American Community Survey (ACS) data</li>
+                      <li><a href="https://lehd.ces.census.gov/data/" target="_blank">● Longitudinal Employer-Household Dynamics (LEHD)/ Origin-Destination Employment Statistics(LODES) data</a></li>
+                      <li><a href="https://www.census.gov/programs-surveys/acs/data.html" target="_blank">● American Community Survey (ACS) data</a></li>
+                      <li><a href="https://data.cityofnewyork.us/Transportation/NYC-Taxi-Zones/d3c5-ddgc" target="_blank">● NYC Taxi Zones</a></li>
                     </ul>
-                    <p class="text-muted">Trip Data</p>
+                    <stong class="text-muted">Trip Data</stong>
                     <ul class="list-inline">
-                      <li>● Taxi and Limousine Commission (TLC)</li>
-                      <li>●	Here map API</li>
-                      <li>●	Uber API</li>
+                      <li><a href="https://www1.nyc.gov/site/tlc/about/data.page" target="_blank">● Taxi and Limousine Commission (TLC)</a></li>
+                      <li><a href="https://developer.here.com/develop/rest-apis" target="_blank">● Here map API</a></li>
+                      <li><a href="https://developer.uber.com" target="_blank">● Uber API</a></li>
                     </ul>
                   </div>
                 </div>
@@ -279,37 +352,65 @@
             </li>
             <li class="timeline-inverted">
               <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="img/about/2.jpg" alt="">
+                <img class="rounded-circle img-fluid" src="img/data/2.jpg" alt="">
               </div>
               <div class="timeline-panel">
                 <div class="timeline-heading">
                   <h4>Methodology</h4>
-                  <p class="text-muted">Nested Logit Models</p>
+                  <p class="list-inline">Nested Logit Models</p>
                 </div>
                 <div class="timeline-body">
-                  <p class="list-inline">In order to quantify the impact of the Manhattan Congestion Pricing policy, we need to compare the
-simulated ridership under the new pricing scenario against the simulated baseline scenario. For that purpose,
-we will first use the LEHD/LODES as a proxy for urban mobility, then train a model based on choices
-reported in ACS and actual proportions of taxi, FHV and shared FHV observed in the data, and finally
-compare the simulated ridership to prior observed preferences to assess the predicted modal shifts.</p>
+                  <p class="text-muted">In order to quantify the impact of the Manhattan Congestion Pricing
+                    policy, we have compared the simulated ridership under the new pricing scenario against
+                     the simulated baseline scenario. For that purpose, we have first used the LEHD/LODES
+                      as a proxy for urban mobility, then trained a nested multimonial logit model based on
+                      choices reported in ACS and actual proportions of taxi, FHV and shared FHV observed in the data,
+                      and finally compared the simulated ridership to the prior observed preferences to assess the predicted
+                         modal shifts under different scenaris. </p>
                 </div>
               </div>
             </li>
-            <!-- <li>
+            <li>
               <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="img/about/3.jpg" alt="">
+                <img class="rounded-circle img-fluid" src="img/data/3.jpg" alt="">
               </div>
               <div class="timeline-panel">
                 <div class="timeline-heading">
-                  <h4>December 2012</h4>
-                  <h4 class="subheading">Transition to Full Service</h4>
+                  <h4>Tune parameters</h4>
+                  <p class="list-inline">Choose the best parameters</p>
                 </div>
                 <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+<<<<<<< HEAD
+                  <p class="text-muted">Tune the parameters by comparing the model results with
+                  ground choice. We use monte carlo in choosing parameters. Regrading sampling taxi zones,
+                  we first try to randomly choose 10 taxi zones； then try to pick the taxi zones which
+                  cover 60% population. Apply grid search to those sampling taxi zones. The loss function
+                  that we tried include root of mean saqure error (RMSE), normalized RMSE, weighting cummulative loss,
+                  and RMSE based on total population for each mode. Finally pick the best parameters from 48 combination
+                  of Tao and Lambda. We also apply uncertatinty in our results.
+                  <br>
+                  <br>
+                  The below table shows the relative values of standard deviation for each mode
+                  and scenario relative to the mean value so that we can get a better idea of what
+                  sort of variation to expect from the model results.
+=======
+                  <p class="text-muted">We tune the parameters by comparing the model results with
+                  ground truth. For this comparision, we initially used 10 only randomly chosen taxi zones；
+                  and then, in a more enhanced version, used the taxi zones which cover 60% of the population. We applied grid search
+                  to these selected taxi zones. The loss functions that we used were root of mean square error(RMSE), normalized RMSE,
+                  weighting cumulative loss and RMSE based on total population for each mode. The reason for using more than one loss function
+                  was that no single one was able to give out good parameters by itself. Finally, we picked the best parameters from 48 combinations
+                  of our parameters(Tau and Lambda). We also added a level of uncertainty in our results by using 5 of the best sets of parameters
+                  and reporting their mean and standard deviation.
+>>>>>>> bbf30c1426e734650ffe2143b5f65c5c59951f47
+                </p>
+                <br>
+                <img class="img-fluid d-block mx-auto" src="img/data/4.jpg" alt="">
+                <!-- <img class="rounded-circle img-fluid" src="img/data/4.jpg" alt=""> -->
                 </div>
               </div>
             </li>
-            <li class="timeline-inverted">
+            <!-- <li class="timeline-inverted">
               <div class="timeline-image">
                 <img class="rounded-circle img-fluid" src="img/about/4.jpg" alt="">
               </div>
@@ -325,14 +426,250 @@ compare the simulated ridership to prior observed preferences to assess the pred
             </li> -->
             <li class="timeline-inverted">
               <div class="timeline-image">
-                <h4>Further
-                  <br>Will
-                  <br>Come...</h4>
+                <h4>Quantify
+                  <br>The
+                  <br>Impact</h4>
               </div>
+
             </li>
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <!-- Results Section: intoduce some background -->
+  <section class="bg-light" id="results">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Results</h2>
+          <h3 class="section-subheading text-muted">Main take away from our model</h3>
+        </div>
+        <!-- <h3 class="section-subheading text-muted"> -->
+          <P class="timeline-body text-muted">
+          Quantitatively evaluate THE impacts of Manhattan Congestion Pricing Policy basen on
+          our transportation mode shift model of three scenarios:
+          <ul class="timeline-body text-muted list-inline">
+            <li>1. Status quo (no surcharge added to price)</li>
+            <li>2. Existing Congestion Pricing surcharge ($0.75 - $2.75 added to nest 1 trips
+              passing through the Congestion Zone) </li>
+            <li>3. Proposed Congestion Pricing surcharge ($10 added to nest 1 trips and private
+              vehicles passing through the Congestion Zone) </li>
+          </ul>
+
+        </P>
+      </div>
+      <br>
+      <br>
+      <br>
+      <!-- Results -->
+      <div class="container">
+        <div class="row">
+                <!-- result 1 -->
+              <h4 class="col-lg-8 mx-auto text-center"> —— Mode shift under each scenario ——</h4>
+              <img class="img-fluid d-block mx-auto" src="img/results/results1.png" alt="">
+              <strong class="col-lg-8 mx-auto text-center"> Table 2 </strong>
+              <p>This table shows a distribution view of the scaled results of our model simulations.
+                Numbers represent the proportion of total NYC commute trips for each mode predicted under
+                each scenario. Specifically, an overall 0.16% drop (about 4,700 trips) in Taxi and (non-shared)
+                FHV trips during the daily morning commute hours under the $2.75 tax, and an overall 0.08% drop
+                (about 23,000 trips) under the $10 tax. The private vehicle trips decrease 0.17% (about 4,800 trips)
+                 under the $2.75 tax and 2.73% (about 80,000 trips) under $10 tax. In contrast, shared FHV trips,
+                 Public Transportation trips, and Walking trips increase in both scenarios. 
+                  Based on the means and the standard deviations of our models,
+                the uncertainties of the proportions are as follows: Taxi±0.05%, FHV±0.14%, Shared FHV±0.19%,
+                 Public Transportation±0.23%, Walking±0.05%, Private Vehicles±0.14%.<br><br><br>
+                 </p>
+
+                 <!-- result 2 -->
+                 <h4 class="col-lg-8 mx-auto text-center"> —— Anticipated impact on <br>MTA, taxi, FHV revenues, and Tax revenues ——</h4>
+                 <img class="img-fluid d-block mx-auto" src="img/results/results2-1.png" alt="">
+                 <strong class="col-lg-8 mx-auto text-center"> Figure 1</strong>
+                 <p>The distribution of the revenues for the four transportation modes under different
+                    price scenarios, along with the actual amount change displayed in the  table.This
+                    bar chart on the left shows the change in revenues for Public Transportation
+                   (MTA), Taxi, FHV, and Shared-FHV under each price scenario. Corresponding to the
+                   mode shift,  there are predicted a reduction in Taxi and (non-shared) FHV revenues
+                    under both Congestion Pricing Scenarios, and an increase in Shared- FHV and MTA revenues.
+                    The table on the right displays the actual amount of change in dollars between scenarios
+                     with the corresponding percentage. Taxi revenue has the biggest percentage drop (about 40%)
+                      each time, and MTA  has the greatest growth in number (about $72,000 and $551,000).
+                      Non-shared FHV has a slight decrease in revenues under each price scenario, however,
+                      the increase in shared FHV (about 50% each time)  can easily cover that loses and creates
+                      extra profits for the total FHV revenue (the overall FHV revenue increases $15,952 from
+                      status quo to $2.75 tax and $39,495 from $2.75 to $10 tax). The variances in the
+                      revenue amount for each mode are as follows: Taxi  ±$8,500 FHV ±$1,700,
+                      Shared FHV±$20,000, Public Transportation±$13,000.<br><br></p>
+
+              <img class="img-fluid d-block mx-auto" src="img/results/results2-2.png" alt="">
+              <strong class="col-lg-8 mx-auto text-center"> Table 3</strong>
+              <p>The Tax Revenue from the Congestion Surcharge under each scenario. The predicted
+                tax revenue is compared with a "zero scenario" revenue —— the expected revenue
+                if the surcharge were imposed and no commuters change their mode choice behaviors.
+                The results show that both of the predicted revenues after the mode shift in
+                scenario 2 and 3 are about 50% lower than the zero scenario revenues.
+              This indicates the advantage of our methodology, as the use of a mode shift model
+              provides a more realistic prediction of future revenues, as it accounts for behavior
+              changes resulting from the tax. Policy makers using the zero scenario might vastly
+              over-estimate surcharge tax revenues.The uncertainties of the predicted revenues are ± $5,000
+              under $2.75 Tax scenario and ± $22,000 in $10 Tax scenario. <br><br></p>
+
+              <img class="img-fluid d-block mx-auto" src="img/results/results2-3.png" alt="">
+              <strong class="col-lg-8 mx-auto text-center"> Figure 2</strong>
+                                    <p>Origin taxi zones on the left are shaded by the predicted percent decrease in total
+                                      taxi and FHV ridership under the $2.75 Congestion Tax scenario. Origin taxi
+                                      zones on the right are shaded by the predicted percent decrease in total taxi,
+                                      FHV, and private vehicle ridership under the $10 Congestion Tax scenario. Manhattan
+                                      taxi zones in or adjacent to the congestion zone are predicted to experience the
+                                      largest shift. All of the 37 origin taxi zones that the model predicts will experience
+                                      the most mode shift under the $10 Congestion Tax (predicted change is more than 28.57%,
+                                      which is one standard deviation above the mean predicted change) are in Manhattan. The
+                                      geographic range of impact is much larger in Scenario 3 ($10 surcharge). 
+                                      Our model did not assume any exemptions for residents of the congestion zones,
+                                      and our results suggest that decisions around those exemptions may significantly
+                                      affect the impacts of the policy.<br><br><br><br></p>
+
+<!-- result 3 -->
+<h4 class="col-lg-8 mx-auto text-center"> —— Anticipated daily impact on <br>commuter time and expenses ——</h4>
+<img class="img-fluid d-block mx-auto" src="img/results/results3-1.png" alt="">
+<strong class="col-lg-8 mx-auto text-center"> Table 4</strong>
+  <p>
+This table shows the subway ridership and the impact on average commute time and cost
+under the 2 congestion surcharge scenarios. These are derived from the mean values of the
+distribution created by running 5 sets of parameters with percentage variance.
+We can see an increase in the ridership and commute time but, the cost remains somewhat similar.<br><br>
+  </p>
+<img class="img-fluid d-block mx-auto" src="img/results/results3-2.png" alt="">
+<strong class="col-lg-8 mx-auto text-center"> Table 5</strong>
+<p>
+  This table shows the percentage changes in subway ridership average commute time and cost
+  under the 2 congestion surcharge scenarios. These are derived from the mean values of the
+  distribution created by running 5 sets of parameters with percentage variance as. We can see
+  a noticeable increase in the ridership and commute time but, the change
+  in the cost is relatively insignifican.
+  <br>
+  <br>
+  As seen in table 4 and table 5, the subway ridership and the commute time increased for
+  both the scenarios but, the change is more significant for the $10 Congestion Tax Scenario.
+  So, we can see that the average commuter will spend not only more time on their commute
+  but will also, most likely, have to commute in more crowded subway cars. Also, an interesting 
+  impact seen here is that the commute cost increases slightly in the $2.75 congestion tax scenario
+  in contrast to it reducing in the $10 scenario. This is because the model predicted that most
+  of the taxi and FHV commuters simply switched to either shared FHVs or stuck to their mode of
+   choice and just paid the surcharge instead of shifting to the subway which dramatically cut
+   the cost which makes sense too as people are usually very reluctant to change their
+   transportation mode<br><br><br>.
+</p>
+
+<!-- result 4 -->
+<h4 class="col-lg-8 mx-auto text-center"> —— Anticipated environmental impact ——</h4>
+<!-- <img class="img-fluid d-block mx-auto" src="img/results/results3-1.png" alt=""> -->
+  <p>
+The earlier cited work of Gibson, et. al provides a framework for us to quantitatively evaluate
+the predicted environmental impacts of the surcharge scenarios. They found that for every daily
+vehicle reduction emissions would be reduced by .00006552 microgram/meter cubed. They then
+presented a framework for quantifying the economic benefit of this emissions reduction. They cite
+1984 US government research that estimated that people were willing to pay $148.70 ($366.59 in 2019)
+ per year per person for every microgram/cubic meter reduction in pollution. If we assume that
+ every 60 miles (during the 6 am to 10 am morning commute window) in driving distance represents
+ one vehicle (conservatively assuming a constant 15 miles per hour), we can estimate the number
+ of vehicles reduced. From this framework we predict a very small reduction of 13 cars per commute
+ window under the $2.75 surcharge scenario and a reduction of 9,045 cars during the morning commute
+  under the $10 scenario. This includes total mileage reduction from taxis, FHVs and private
+  vehicles and accounts for the additional miles from the predicted increase in shared FHVs.
+  Under scenario 3 the framework presented by Gibson, et.al would predict a daily reduction of
+  approximately 0.6 micrograms/meters cubed for a 219 microgram/meters cubed yearly reduction of
+   harmful pollutants attributed to the morning commute hours. If we multiply that total by the
+   $366.59 per year a person is willing to pay for a reduction in unit of pollutants, we get a
+   yearly value of $80,348.91 per person impacted. Applied to the approximately 1.3 million
+   people living in Manhattan's congestion zone, the reductions environmental benefits are
+   significant. Notable from Gibson, et. al. was their finding that air quality benefits expanded
+   beyond the congestion zone, suggesting an even larger range of environmental benefit is possible. 
+<br><br><br>
+  </p>
+
+
+<!-- result 5 -->
+<h4 class="col-lg-8 mx-auto text-center"> —— Equity evaluatio ——</h4>
+<img class="img-fluid d-block mx-auto" src="img/results/results5-1.png" alt="">
+<strong class="col-lg-8 mx-auto text-center"> Figure 3</strong>
+  <p>
+The plot on the left shows total commuters by income that report using taxi, FHV, shared FHV
+or private vehicles to commute to work. The plot on the right shows the expected net
+reduction of Taxi, FHV, shared FHV and private vehicles predicted under Scenario 3 - $10
+congestion surcharge - by income bracket. ACS income brackets are not evenly spaced, so
+the numbers in each bracket were either summed or divided in order to create a perceptually
+uniform plot, with each bar representing an income range of $25,000. In order to evaluate any
+potential equity or accessibility concerns with the existing or
+proposed congestion tax, the model's predicted mode shift segmented by wage
+bracket are compared. Figure 3 plots the predicted net reduction (right) in vehicle commutes
+from the baseline Scenario 1 to Scenario 3 - the proposed $10 surcharge - by income
+bracket, as well as the total number of vehicle commuters in Scenario 1 (left). Many vehicle-based
+commuters make fewer than $100,000 per year, suggesting potential for a congestion surcharge to
+weigh heavily on the middle class. However, when plotting predicted mode shift as a result of the
+surcharge, the surcharge appears to be a relative progressive tax, with the majority of the
+mode shift experienced by people making over $75,000 per year. <br><br>
+</p>
+
+<img class="img-fluid d-block mx-auto" src="img/results/results5-2.png" alt="">
+<strong class="col-lg-8 mx-auto text-center"> Figure 4</strong>
+<p>
+  The figure on the left shows the percent of taxi zone residents who work in the congestion
+  zone (shaded by home taxi zone). The figure on the right shows the percent of all taxi,
+  FHV, shared FHV and private vehicle commuters expected to shift modes due to the $10 surcharge.
+  Both figures reference the "Scenario 3" congestion surcharge of $10. The congestion zone
+  referenced is the corresponding zone, Manhattan below 60th st.. When comparing the two plots
+  in Figure 4, a higher percent of commuters working in the congestion zone is associated with
+  a higher percent of vehicle commuters predicted to change modes. This makes sense as commuters
+  not living or working in the congestion zone will not be affected by the surcharge during their
+  workday commutes. This dynamic may explain why we predict that commuters impacted by the surcharge will skew higher income.
+  <br><br>
+</p>
+
+<img class="img-fluid d-block mx-auto" src="img/results/results5-3.png" alt="">
+<strong class="col-lg-8 mx-auto text-center"> Figure 5</strong>
+<p>
+  The plot on the left shows the positive correlation between percent of commuters
+  working in the congestion zone and that home zone's median wage. The plot on the right shows
+  the negative correlation between the percent of commuters working in the congestion zone and
+  the percent of commuters choosing private vehicles for transportation to work. As shown in figure 5
+  The percent of people working in the congestions zone is associated with a higher median
+  income at the taxi zone level. Additionally, the percent of people working in the congestion
+  zone is associated with a lower percentage of people in that zone reporting private vehicles as
+  their transportation choice, suggesting that many private vehicle commuters may not work in
+  the congestion zone,  and may not be impacted by the surcharge on their daily commutes.  
+  <br><br>
+</p>
+
+<img class="img-fluid d-block mx-auto" src="img/results/results5-4.png" alt="">
+<strong class="col-lg-8 mx-auto text-center"> Figure 6</strong>
+<p>
+  To explore accessibility concerns, the map on the left is shaded according to the percent of residents in that zone age 65
+  or over, calculated as an average of all the census tracts in that zone. The map on the
+  right shows the percent of residents with a disability, calculated as the average of all
+  census tracts in that zone.
+  Figure 6 has been included to show the distribution of residents over the age of 65
+  or with a disability. While our model estimates mode choice based on a trade off between time
+  and cost, these populations may have additional concerns that might prevent them from switching
+  modes, particularly to public transportation, even if a surcharge made their vehicle-based
+  commute prohibitively expensive. While the final details of the proposed $10 surcharge are
+  not yet available, most news accounts report that there will be an exemption or discount for
+  populations with accessibility concerns, particularly for those living in the congestion zone. 
+  <br><br>
+</p>
+
+        </div>
+      </div>
+
+      <br>
+      <br>
+      <h3>To know more information, please refer to our:</h3>
+      <br>
+      <p>Github: <a href="https://github.com/Rufei-Sheng/Manhattan-Congestion-Surcharge-Capstone" target="_blank">Manhattan-Congestion-Surcharge-Capstone</a></p>
+      <p>Paper: <a href="https://www.authorea.com/368262/ed3vOsNxLM0xOkC0CxWBAA" target="_blank">Impact of Manhattan Congestion Surcharge on For-Hire Vehicles </a></p>
+
     </div>
   </section>
 
@@ -348,7 +685,7 @@ compare the simulated ridership to prior observed preferences to assess the pred
       <div class="row">
         <div class="col-sm-4">
           <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/0.jpg" alt="">
+            <img class="mx-auto rounded-circle" src="img/team/stan.jpg" alt="">
             <h4>Stanislav Sobolevsky</h4>
             <p class="text-muted">Project Mentor</p>
             <!-- <ul class="list-inline social-buttons">
@@ -372,9 +709,9 @@ compare the simulated ridership to prior observed preferences to assess the pred
         </div>
         <div class="col-sm-4">
           <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/0.jpg" alt="">
+            <img class="mx-auto rounded-circle" src="img/team/katie.jpg" alt="">
             <h4>Katie Voorhees</h4>
-            <p class="text-muted">Literature Review & Report Writing Lead</p>
+            <p class="text-muted">Literature Review <br>& Report Writing Lead</p>
             <!-- <ul class="list-inline social-buttons">
               <li class="list-inline-item">
                 <a href="#">
@@ -396,9 +733,9 @@ compare the simulated ridership to prior observed preferences to assess the pred
         </div>
         <div class="col-sm-4">
           <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/0.jpg" alt="">
+            <img class="mx-auto rounded-circle" src="img/team/Rufei.jpg" alt="">
             <h4>Rufei sheng</h4>
-            <p class="text-muted">Modeling and Analysis Lead</p>
+            <p class="text-muted">Modeling and Analysis Lead <br>& Web Development</p>
             <!-- <ul class="list-inline social-buttons">
               <li class="list-inline-item">
                 <a href="#">
@@ -420,7 +757,7 @@ compare the simulated ridership to prior observed preferences to assess the pred
         </div>
         <div class="col-sm-4">
           <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/0.jpg" alt="">
+            <img class="mx-auto rounded-circle" src="img/team/Soham.jpg" alt="">
             <h4>Soham R Mody</h4>
             <p class="text-muted">Modeling and Analysis Lead</p>
             <!-- <ul class="list-inline social-buttons">
@@ -444,7 +781,7 @@ compare the simulated ridership to prior observed preferences to assess the pred
         </div>
         <div class="col-sm-4">
           <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/0.jpg" alt="">
+            <img class="mx-auto rounded-circle" src="img/team/xiaoning.jpeg" alt="">
             <h4>Xiaoning He</h4>
             <p class="text-muted">Data Lead</p>
             <!-- <ul class="list-inline social-buttons">
@@ -631,10 +968,10 @@ compare the simulated ridership to prior observed preferences to assess the pred
                 <h2 class="text-uppercase">Project Background</h2>
                 <p class="item-intro text-muted"></p>
                 <img class="img-fluid d-block mx-auto" src="img/portfolio/01-thumbnail.jpg" alt="">
-                <p>Much of New York's growing populationnds itself regularly frustrated while traversing the city. Subways are experiencing an increasing amount of delays due to an aging infrastructure. Driving speeds in Manhattan's Central Business District (south of 60th street) have slowed to an average of 7.2 mph, with speeds in the Midtown core" 30% slower than the rest of the CBD. While the
+                <p>Much of New York's growing population finds itself regularly frustrated while traversing the city. Subways are experiencing an increasing amount of delays due to an aging infrastructure. Driving speeds in Manhattan's Central Business District (south of 60th street) have slowed to an average of 7.2 mph, with speeds in the Midtown core" 30% slower than the rest of the CBD. While the
 subway and bus are still the third and fourth most popular ways to travel in NYC (after private vehicles and
-walking), public transit ridership has been declining since 2015, exacerbatingnancial challenges at the MTA. Department of Transportation (DOT)
-ocials attribute the loss in ridership to consumers increasingly choosing For-Hire Vehicles (FHV), particularly during off-peak hours. The challenges facing NYC's complex transportation ecosystem have motivated
+walking), public transit ridership has been declining since 2015, exacerbating financial challenges at the MTA. Department of Transportation (DOT)
+officials attribute the loss in ridership to consumers increasingly choosing For-Hire Vehicles (FHV), particularly during off-peak hours. The challenges facing NYC's complex transportation ecosystem have motivated
 this research.</p>
               <br>
               <p>New York lawmakers have responded to these challenges with an initiative unprecedented in the United
@@ -642,10 +979,12 @@ States - congestion pricing. With aims to relieve congestion and recover some di
 State's Department of Taxation and Finance imposed a congestion surcharge on February 2, 2019 aimed
 at taxis and FHVs. The tax adds $2.75 to FHV trips, $2.50 to
 taxi trips and $.75 to ride-share or pool trips. The tax applies to every trip that begins, ends or passes
-through Manhattan south of 96th Street. On April 1, 2019 the NY State budget passed, approving a future
-congestion tax for all vehicles entering Manhattan's CBD below 60th St. Revenue from the tax are earmarked for MTA capital investments, but
-this larger scale congestion pricing scheme is not scheduled to be in eect until December 2020. The tax will collect around $11 from both for-hire and private vehicles, and will include exemptions for low income New
-Yorkers and drivers with disabilities.</p>
+through Manhattan south of 96th Street. On April 1, 2019, the NY State budget passed, approving a
+future congestion tax for all vehicles  entering Manhattan's CBD below 60th St. Revenue from the tax is
+earmarked for MTA capital investments, but this larger scale congestion pricing scheme is not
+scheduled to be in effect until December 2020 at the earliest. The tax will collect around $10
+from both for-hire and private vehicles and will likely include exemptions for congestion zone
+residents with lower incomes and drivers with disabilities.</p>
                 <!-- <ul class="list-inline">
                   <li>Date: January 2017</li>
                   <li>Client: Threads</li>
@@ -681,9 +1020,9 @@ Yorkers and drivers with disabilities.</p>
                 <img class="img-fluid d-block mx-auto" src="img/portfolio/02-thumbnail.jpg" alt="">
                 <p>While transportations advocates eagerly anticipate the revenue from the congestion pricing plan, many
 drivers, particularly from the outer boroughs and suburban areas, are skeptical of the plan's potential
-to reduce trac congestion and lament paying a tax aimed at repairing a public transit system they may
+to reduce traffic congestion and lament paying a tax aimed at repairing a public transit system they may
 not use. Regardless of one's political opinion of the plan, the circumstances emphasize the importance of
-understanding the effect of pricing changes on people's transportation choices.</p>
+understanding the effect of pricing changes on people's transportation choices.</p>
                 <!-- <ul class="list-inline">
                   <li>Date: January 2017</li>
                   <li>Client: Explore</li>
@@ -719,16 +1058,16 @@ understanding the effect of pricing changes on people's transportation choices.
                 <img class="img-fluid d-block mx-auto" src="img/portfolio/03-thumbnail.jpg" alt="">
                 <p>Open data are used to model the dynamics behind transportation mode shift in New York
 City. We use the data-driven model to explore the impacts of the initial Feb. 2, 2019 congestion tax
-and anticipate the mode shift that may be provoked by the December 2020 implementation of larger scale
-congestion pricing, as well as an alternative scenario in which MTA prices were increased by 30% in order to
-fund repairs.</p>
+and anticipate the mode shift that may be provoked by the planned December 2020 implementation of larger scale
+congestion pricing.</p>
 
                 <ul class="list-inline">
-                  <li>Projetcs impacts on the following dimensions will be considered when evaluating the "effectiveness" of each policy scenario:</li>
+                  <li>Projected impacts on the following dimensions will be considered:</li>
                   <li>● Traffic reduction</li>
-                  <li>● Job increase or decrease</li>
+                  <li>● Industry revenue increase/decrease for MTA, FHV, Taxi/li>
                   <li>● Tax Revenue (earmarked for public transit investments)</li>
                   <li>●	Environmental (i.e. reduction in CO2 emissions)</li>
+                  <li>● Projected surcharge cost and/or commute time increase for NYC commuters</li>
                 </ul>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
